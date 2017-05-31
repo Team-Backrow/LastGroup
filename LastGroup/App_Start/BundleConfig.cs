@@ -25,10 +25,10 @@ namespace LastGroup
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                      "~/Scripts/angular-core.js",
+                      "~/Scripts/angular.js",
                       "~/Scripts/angular-route.js",
-                      "~/lastGroup/lastGroup.js")
-             .IncludeDirectory("~/lastGroup", "*.js", true));
+                      "~/app/app.js")
+             .IncludeDirectory("~/app", "*.js", true));
         }
     }
 }

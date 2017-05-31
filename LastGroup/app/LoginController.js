@@ -1,5 +1,4 @@
-﻿
-lastGroup.controller("loginController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
+﻿app.controller("LoginController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
     $scope.username = "";
     $scope.password = "";
 
@@ -16,14 +15,14 @@ lastGroup.controller("loginController", ["$scope", "$http", "$location", functio
             },
             data: { grant_type: "password", username: $scope.username, password: $scope.password }
         })
-            .then(function (result) {
+            .success(function (result) {
                 console.log("result=", result);
 
-                sessionStorage.setItem('token', result.data.access_token);
-                $http.defaults.headers.common['Authorization'] = `bearer ${result.data.access_token}`;
+                sessionStorage.setItem("token", result.data.access_token);
+
+                $http.defaults.headers.common["LastGroup"] = `bearer ${result.data.access_token}`;
 
                 $location.path("/home");
             });
     }
-}
-]);
+}])

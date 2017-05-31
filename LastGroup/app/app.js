@@ -9,7 +9,11 @@ app.config(["$routeProvider", function ($routeProvider) {
             .when("/home", {
                 templateUrl: "app/home.html",
                 controller: "HomeController"
-            });
+            })
+    .when("/signup", {
+        templateUrl: "app/add.html",
+        controller: "AddController"
+    });
 }
 ])
 app.run(["$http", function ($http) {

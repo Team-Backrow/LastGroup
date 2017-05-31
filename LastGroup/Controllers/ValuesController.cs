@@ -22,9 +22,10 @@ namespace LastGroup.Controllers
             return "value";
         }
 
-        // POST api/values
-        public void Post([FromBody]string value)
+        // POST api/value
+        public string Post([FromBody]string value)
         {
+            return "here";
         }
 
         // PUT api/values/5
